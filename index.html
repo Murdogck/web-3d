@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPrint3D - Servicios Profesionales de Impresión 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-base-100">
+    <!-- Navegación Fija -->
+    <div class="navbar bg-base-100 shadow-lg fixed top-0 z-50">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#visualizador">Visualizador 3D</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost text-xl font-bold text-primary">
+                <i class="fas fa-cube mr-2"></i>TechPrint3D
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#galeria" class="nav-link">Galería</a></li>
+                <li><a href="#visualizador" class="nav-link">Visualizador 3D</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="btn-group">
+                <button class="btn btn-sm btn-primary section-toggle active" data-section="empresas">
+                    <i class="fas fa-building mr-1"></i>Empresas
+                </button>
+                <button class="btn btn-sm btn-outline section-toggle" data-section="personal">
+                    <i class="fas fa-user mr-1"></i>Personal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero min-h-screen bg-gradient-to-br from-primary/10 to-secondary/10 pt-16">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <div class="hero-section" id="hero-empresas">
+                    <h1 class="text-5xl font-bold mb-6 text-primary">
+                        Soluciones de Impresión 3D para Empresas
+                    </h1>
+                    <p class="text-xl mb-8 text-base-content/80">
+                        Transformamos sus ideas en realidad con tecnología de impresión 3D de vanguardia. 
+                        Prototipos, producción en serie y soluciones industriales personalizadas.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 mb-8">
+                        <div class="badge badge-lg badge-primary">Prototipos Rápidos</div>
+                        <div class="badge badge-lg badge-secondary">Materiales Técnicos</div>
+                        <div class="badge badge-lg badge-accent">Precisión Industrial</div>
+                    </div>
+                </div>
+                <div class="hero-section hidden" id="hero-personal">
+                    <h1 class="text-5xl font-bold mb-6 text-primary">
+                        Impresión 3D para Proyectos Personales
+                    </h1>
+                    <p class="text-xl mb-8 text-base-content/80">
+                        Dale vida a tus ideas creativas con nuestros servicios de impresión 3D. 
+                        Desde objetos decorativos hasta herramientas personalizadas.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 mb-8">
+                        <div class="badge badge-lg badge-primary">Objetos Únicos</div>
+                        <div class="badge badge-lg badge-secondary">Diseños Personalizados</div>
+                        <div class="badge badge-lg badge-accent">Precios Accesibles</div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="btn btn-primary btn-lg">
+                        <i class="fas fa-rocket mr-2"></i>Solicitar Presupuesto
+                    </button>
+                    <button class="btn btn-outline btn-lg">
+                        <i class="fas fa-play mr-2"></i>Ver Proyectos
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-cube cube-1"></div>
+            <div class="floating-cube cube-2"></div>
+            <div class="floating-cube cube-3"></div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-primary">Nuestros Servicios</h2>
+                <p class="text-xl text-base-content/70">Tecnología avanzada para todas sus necesidades</p>
+            </div>
+
+            <!-- Servicios para Empresas -->
+            <div class="services-section" id="services-empresas">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                        <div class="card-body">
+                            <div class="text-4xl text-primary mb-4">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3 class="card-title text-2xl mb-4">Prototipos Industriales</h3>
+                            <p class="text-base-content/70 mb-4">
+                                Desarrollo rápido de prototipos funcionales con materiales técnicos avanzados como PEEK, fibra de carbono y policarbonato.
+                            </p>
+                            <div class="card-actions justify-end">
+                                <div class="badge badge-primary">Alta Precisión</div>
+                                <div class="badge badge-secondary">Materiales Técnicos</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                        <div class="card-body">
+                            <div class="text-4xl text-secondary mb-4">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3 class="card-title text-2xl mb-4">Aplicaciones Médicas</h3>
+                            <p class="text-base-content/70 mb-4">
+                                Prótesis personalizadas, implantes a medida y dispositivos médicos adaptados con certificaciones sanitarias.
+                            </p>
+                            <div class="card-actions justify-end">
+                                <div class="badge badge-primary">Biocompatible</div>
+                                <div class="badge badge-secondary">Personalizado</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                        <div class="card-body">
+                            <div class="text-4xl text-accent mb-4">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3 class="card-title text-2xl mb-4">Sector Aeroespacial</h3>
+                            <p class="text-base-content/70 mb-4">
+                                Componentes ligeros y resistentes para la industria aeroespacial con materiales de alta performance.
+                            </p>
+                            <div class="card-actions justify-end">
+                                <div class="badge badge-primary">Ultra Ligero</div>
+                                <div class="badge badge-secondary">Resistente</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicios para Personal -->
+            <div class="services-section hidden" id="services-personal">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                        <div class="card-body">
+                            <div class="text-4xl text-primary mb-4">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3 class="card-title text-2xl mb-4">Objetos Domésticos</h3>
+                            <p class="text-base-content/70 mb-4">
+                                Accesorios para el hogar, organizadores, herramientas personalizadas y piezas de reemplazo.
+                            </p>
+                            <div class="card-actions justify-end">
+                                <div class="badge badge-primary">Funcional</div>
+                                <div class="badge badge-secondary">Personalizable</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                        <div class="card-body">
+                            <div class="text-4xl text-secondary mb-4">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3 class="card-title text-2xl mb-4">Objetos Decorativos</h3>
+                            <p class="text-base-content/70 mb-4">
+                                Esculturas, jarrones, figuras personalizadas y elementos decorativos únicos para su hogar.
+                            </p>
+                            <div class="card-actions justify-end">
+                                <div class="badge badge-primary">Artístico</div>
+                                <div class="badge badge-secondary">Único</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                        <div class="card-body">
+                            <div class="text-4xl text-accent mb-4">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3 class="card-title text-2xl mb-4">Hobbies y Juegos</h3>
+                            <p class="text-base-content/70 mb-4">
+                                Accesorios para hobbies, piezas de juegos, miniaturas y proyectos creativos personalizados.
+                            </p>
+                            <div class="card-actions justify-end">
+                                <div class="badge badge-primary">Creativo</div>
+                                <div class="badge badge-secondary">Divertido</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Materiales -->
+            <div class="mt-16">
+                <h3 class="text-3xl font-bold text-center mb-8 text-primary">Materiales Disponibles</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="card bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
+                        <div class="card-body">
+                            <h4 class="card-title text-primary">Materiales Básicos</h4>
+                            <ul class="list-disc list-inside text-sm space-y-1">
+                                <li>PLA (Biodegradable)</li>
+                                <li>ABS (Resistente)</li>
+                                <li>PETG (Químicamente resistente)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/20">
+                        <div class="card-body">
+                            <h4 class="card-title text-secondary">Materiales Técnicos</h4>
+                            <ul class="list-disc list-inside text-sm space-y-1">
+                                <li>Policarbonato (PC)</li>
+                                <li>PEEK/ULTEM</li>
+                                <li>Nylon reforzado</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20">
+                        <div class="card-body">
+                            <h4 class="card-title text-accent">Materiales Especializados</h4>
+                            <ul class="list-disc list-inside text-sm space-y-1">
+                                <li>Fibra de carbono</li>
+                                <li>Fibra de vidrio</li>
+                                <li>Grafeno conductivo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Proyectos -->
+    <section id="galeria" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-primary">Galería de Proyectos</h2>
+                <p class="text-xl text-base-content/70">Ejemplos de nuestro trabajo</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer gallery-item" data-image="0">
+                    <figure class="aspect-video">
+                        <img src="images/impresion-industrial.png" alt="Prototipo Industrial" class="w-full h-full object-cover">
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title">Prototipos Industriales</h3>
+                        <p class="text-sm text-base-content/70">Componentes técnicos de alta precisión</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-primary">Industrial</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer gallery-item" data-image="1">
+                    <figure class="aspect-video">
+                        <img src="images/robot-prototipo.jpg" alt="Robot Prototipo" class="w-full h-full object-cover">
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title">Robot de Grabado Láser</h3>
+                        <p class="text-sm text-base-content/70">Prototipo funcional completo</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-secondary">Robótica</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer gallery-item" data-image="2">
+                    <figure class="aspect-video">
+                        <img src="images/impresion-3d-general.jpg" alt="Impresión 3D General" class="w-full h-full object-cover">
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title">Proyectos Diversos</h3>
+                        <p class="text-sm text-base-content/70">Variedad de aplicaciones y materiales</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-accent">Versátil</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer gallery-item" data-image="3">
+                    <figure class="aspect-video">
+                        <img src="images/organizador-personal.jpg" alt="Organizador Personal" class="w-full h-full object-cover">
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title">Organizadores Personales</h3>
+                        <p class="text-sm text-base-content/70">Soluciones de organización a medida</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-primary">Personal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Galería -->
+    <div id="gallery-modal" class="modal">
+        <div class="modal-box max-w-4xl">
+            <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <div class="py-4">
+                <img id="modal-image" src="" alt="" class="w-full rounded-lg">
+                <div class="flex justify-between mt-4">
+                    <button id="prev-image" class="btn btn-circle btn-outline">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="next-image" class="btn btn-circle btn-outline">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </div>
+
+    <!-- Visualizador 3D -->
+    <section id="visualizador" class="py-20 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-primary">Visualizador 3D</h2>
+                <p class="text-xl text-base-content/70">Explore nuestros modelos en 3D</p>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl max-w-4xl mx-auto">
+                <div class="card-body">
+                    <div class="flex flex-wrap justify-center gap-4 mb-6">
+                        <button class="btn btn-primary model-btn active" data-model="cube">Cubo Técnico</button>
+                        <button class="btn btn-outline model-btn" data-model="gear">Engranaje</button>
+                        <button class="btn btn-outline model-btn" data-model="vase">Jarrón</button>
+                    </div>
+                    
+                    <div id="viewer-3d" class="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg aspect-video flex items-center justify-center relative overflow-hidden">
+                        <div class="model-display" id="model-cube">
+                            <div class="cube-3d">
+                                <div class="face front"></div>
+                                <div class="face back"></div>
+                                <div class="face right"></div>
+                                <div class="face left"></div>
+                                <div class="face top"></div>
+                                <div class="face bottom"></div>
+                            </div>
+                        </div>
+                        <div class="model-display hidden" id="model-gear">
+                            <div class="gear-3d">
+                                <div class="gear-tooth" style="--i: 0"></div>
+                                <div class="gear-tooth" style="--i: 1"></div>
+                                <div class="gear-tooth" style="--i: 2"></div>
+                                <div class="gear-tooth" style="--i: 3"></div>
+                                <div class="gear-tooth" style="--i: 4"></div>
+                                <div class="gear-tooth" style="--i: 5"></div>
+                                <div class="gear-tooth" style="--i: 6"></div>
+                                <div class="gear-tooth" style="--i: 7"></div>
+                            </div>
+                        </div>
+                        <div class="model-display hidden" id="model-vase">
+                            <div class="vase-3d"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center gap-4 mt-6">
+                        <button id="reset-view" class="btn btn-outline">
+                            <i class="fas fa-undo mr-2"></i>Resetear Vista
+                        </button>
+                        <button id="toggle-rotation" class="btn btn-primary">
+                            <i class="fas fa-play mr-2"></i>Pausar Rotación
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section id="contacto" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-primary">Contacto y Presupuesto</h2>
+                <p class="text-xl text-base-content/70">Cuéntanos tu proyecto</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Formulario -->
+                <div class="card bg-base-200 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl mb-6">Solicitar Presupuesto</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Nombre completo *</span>
+                                </label>
+                                <input type="text" name="name" class="input input-bordered" required>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Email *</span>
+                                </label>
+                                <input type="email" name="email" class="input input-bordered" required>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Teléfono</span>
+                                </label>
+                                <input type="tel" name="phone" class="input input-bordered">
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Empresa (opcional)</span>
+                                </label>
+                                <input type="text" name="company" class="input input-bordered">
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Tipo de proyecto *</span>
+                                </label>
+                                <select name="projectType" class="select select-bordered" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="prototipo">Prototipo</option>
+                                    <option value="produccion">Producción en serie</option>
+                                    <option value="personal">Proyecto personal</option>
+                                    <option value="medico">Aplicación médica</option>
+                                    <option value="industrial">Aplicación industrial</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Presupuesto estimado</span>
+                                </label>
+                                <select name="budget" class="select select-bordered">
+                                    <option value="">Seleccionar...</option>
+                                    <option value="<500">Menos de 500€</option>
+                                    <option value="500-1000">500€ - 1.000€</option>
+                                    <option value="1000-5000">1.000€ - 5.000€</option>
+                                    <option value="5000+">Más de 5.000€</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Descripción del proyecto *</span>
+                                </label>
+                                <textarea name="message" class="textarea textarea-bordered h-24" placeholder="Describe tu proyecto, materiales preferidos, plazos, etc." required></textarea>
+                            </div>
+                            
+                            <div class="form-control mt-6">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane mr-2"></i>Enviar Solicitud
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Información de Contacto -->
+                <div class="space-y-6">
+                    <div class="card bg-primary text-primary-content shadow-xl">
+                        <div class="card-body">
+                            <h3 class="card-title text-2xl mb-4">
+                                <i class="fas fa-info-circle mr-2"></i>Información de Contacto
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-envelope w-6 mr-3"></i>
+                                    <span>info@techprint3d.com</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone w-6 mr-3"></i>
+                                    <span>+34 900 123 456</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt w-6 mr-3"></i>
+                                    <span>Calle Innovación 123, Madrid, España</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock w-6 mr-3"></i>
+                                    <span>Lun-Vie: 9:00-18:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-200 shadow-xl">
+                        <div class="card-body">
+                            <h3 class="card-title text-2xl mb-4">
+                                <i class="fas fa-share-alt mr-2"></i>Síguenos
+                            </h3>
+                            <div class="flex gap-4">
+                                <a href="#" class="btn btn-circle btn-primary">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle btn-primary">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle btn-primary">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle btn-primary">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-secondary text-secondary-content shadow-xl">
+                        <div class="card-body">
+                            <h3 class="card-title text-2xl mb-4">
+                                <i class="fas fa-rocket mr-2"></i>¿Por qué elegirnos?
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check mr-2"></i>
+                                    Más de 10 años de experiencia
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check mr-2"></i>
+                                    Tecnología de última generación
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check mr-2"></i>
+                                    Materiales certificados
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check mr-2"></i>
+                                    Entrega rápida y segura
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <div class="text-4xl text-primary mb-4">
+                <i class="fas fa-cube"></i>
+            </div>
+            <p class="font-bold text-xl">TechPrint3D</p>
+            <p class="text-base-content/70">Innovación en impresión 3D desde 2014</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="link link-hover">Política de Privacidad</a>
+                <a href="#" class="link link-hover">Términos de Servicio</a>
+                <a href="#" class="link link-hover">FAQ</a>
+                <a href="#" class="link link-hover">Blog</a>
+            </div>
+        </div>
+        <div>
+            <p class="text-sm text-base-content/50">© 2024 TechPrint3D. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Toast para notificaciones -->
+    <div id="toast" class="toast toast-end hidden">
+        <div class="alert alert-success">
+            <span id="toast-message">Mensaje enviado correctamente</span>
+        </div>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
