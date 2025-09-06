@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="btn btn-primary btn-lg">
+                    <button id="solicitar-presupuesto-btn" class="btn btn-primary btn-lg">
                         <i class="fas fa-rocket mr-2"></i>Solicitar Presupuesto
                     </button>
                     <button class="btn btn-outline btn-lg">
@@ -592,7 +592,150 @@
             <span id="toast-message">Mensaje enviado correctamente</span>
         </div>
     </div>
+    <script>
+    
+    // Configuración de Telegram (REMPLAZA ESTOS VALORES)
+    const TELEGRAM_BOT_TOKEN = '8355318692:AAGWglGtEMtWAJqHJzdrCtbTGI1N62Xf1eo';
+    const TELEGRAM_CHAT_ID = '8355318692';
 
+    // Función para enviar el formulario a Telegram
+    async function sendToTelegram(formData) {
+        const message = `
+📋 *Nueva solicitud de presupuesto* 📋
+
+*Nombre:* ${formData.name}
+*Email:* ${formData.email}
+*Teléfono:* ${formData.phone || 'No proporcionado'}
+*Empresa:* ${formData.company || 'No proporcionada'}
+
+*Tipo de proyecto:* ${formData.projectType}
+*Presupuesto estimado:* ${formData.budget || 'No especificado'}
+
+*Descripción del proyecto:*
+${formData.message}
+    `;
+
+        try {
+            const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'Markdown'
+                })
+            });
+
+            const data = await response.json();
+            return data.ok;
+        } catch (error) {
+            console.error('Error enviando a Telegram:', error);
+            return false;
+        }
+    }
+
+    // Función para mostrar notificación
+    function showToast(message, isSuccess = true) {
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toast-message');
+        const alert = toast.querySelector('.alert');
+        
+        toastMessage.textContent = message;
+        
+        // Cambiar clase según éxito/error
+        if (isSuccess) {
+            alert.classList.remove('alert-error');
+            alert.classList.add('alert-success');
+        } else {
+            alert.classList.remove('alert-success');
+            alert.classList.add('alert-error');
+        }
+        
+        // Mostrar toast
+        toast.classList.remove('hidden');
+        
+        // Ocultar después de 5 segundos
+        setTimeout(() => {
+            toast.classList.add('hidden');
+        }, 5000);
+    }
+
+    // Configurar el envío del formulario
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Mostrar estado de carga
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+                submitBtn.disabled = true;
+                
+                // Obtener datos del formulario
+                const formData = {
+                    name: contactForm.querySelector('[name="name"]').value,
+                    email: contactForm.querySelector('[name="email"]').value,
+                    phone: contactForm.querySelector('[name="phone"]').value,
+                    company: contactForm.querySelector('[name="company"]').value,
+                    projectType: contactForm.querySelector('[name="projectType"]').value,
+                    budget: contactForm.querySelector('[name="budget"]').value,
+                    message: contactForm.querySelector('[name="message"]').value
+                };
+                
+                // Validación básica
+                if (!formData.name || !formData.email || !formData.projectType || !formData.message) {
+                    showToast('Por favor, complete todos los campos obligatorios.', false);
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    return;
+                }
+                
+                // Enviar a Telegram
+                const success = await sendToTelegram(formData);
+                
+                if (success) {
+                    showToast('¡Solicitud enviada correctamente! Te contactaremos pronto.');
+                    contactForm.reset();
+                } else {
+                    showToast('Error al enviar el formulario. Inténtelo de nuevo.', false);
+                }
+                
+                // Restaurar botón
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        }
+        
+        // Configurar el botón de presupuesto
+        const presupuestoBtn = document.getElementById('solicitar-presupuesto-btn');
+        if (presupuestoBtn) {
+            presupuestoBtn.addEventListener('click', function() {
+                const contactSection = document.getElementById('contacto');
+                if (contactSection) {
+                    const offsetTop = contactSection.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+    });
+    </script>
+    
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
+    </script>
+    
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>
